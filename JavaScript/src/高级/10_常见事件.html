@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>常见事件</title>
+    <script>
+        // 点击事件: onclick
+        // 双击事件：ondblclick
+        // 获取焦点：onfocus
+        // 加载完成事件：onload
+        window.onload = function(){
+            //1.失去焦点事件
+            // document.getElementById("username").onblur = function(){
+            //     alert("失去焦点了...");
+            // }
+
+            // 2.绑定鼠标移动到元素的事件
+            // document.getElementById("username").onmouseover = function(){
+            //     alert("鼠标在这上面....")
+            // }
+
+            // 3.绑定鼠标点击事件
+            //document.getElementById("username").onmousedown = function(){
+               // alert(event.button);
+                // alert("被点击了一下....");
+            //}
+
+
+        }
+
+        function checkForm(){
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form action="#" id="form" onclick="return checkForm();">
+        <input name="username" id="username">
+        <select  id="city">
+            <option>--请选择--</option>
+            <option>北京</option>
+            <option>上海</option>
+            <option>西安</option>
+        </select>
+        <input type="submit" value="提交">
+    </form>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Function 对象</title>
+    <script>
+        // 创建方式一： var 方法名 = new Function(参数， 语句）   了解，不用
+        /*var fun1 = new Function('da', 'ad', alert('da'));
+        fun1();*/
+
+        // 创建方式二： function 方法名(){}
+        function fun2(){
+            alert("第二种方式创建的.......");
+        }
+
+        // 创建方式三：var 方法名 = function(){}
+        var fun3 = function(){
+            alert("第三种方式创建.....");
+        }
+
+        // 调用方式： 方法名();
+        fun3();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>innerHTML</title>
+    <style>
+        #div2 {
+            border: 1px solid red;
+            width:200px;
+            height:200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        div
+    </div>
+
+    <div id="div2">
+        div2
+    </div>
+</body>
+</html>
+<script>
+    // 获取div元素
+    var div1 = document.getElementById("div1");
+    // 获取innerHTML
+    // alert(div1.innerHTML);
+    // 内部替换为input标签
+    div1.innerHTML = "<input type='text' placeholder='文本框替换'>";
+    // 新增标签内容
+    div1.innerHTML += "<input type='button' value='确认'>";
+
+    // 控制样式
+    var div2 = document.getElementById("div2");
+    div2.onclick = function(){
+        div2.style.border = "1px solid blue";
+    }
+</script>

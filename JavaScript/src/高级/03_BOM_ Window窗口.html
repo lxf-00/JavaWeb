@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Window 窗口</title>
+
+</head>
+<body>
+    <input type="button" id="openBtn" value="百度一下">
+    <input type="button" id="closeBtn" value="关闭新窗口">
+</body>
+</html>
+<script>
+    // alert 弹窗
+    // window.alert("你好");
+    // alert("你好");
+
+    // confirm() 弹窗  点击确定 返回true
+    // var flag = confirm("确认要退出吗？");
+    // document.write(flag);
+
+    // prompt()	显示可提示用户输入的对话框。
+    // var result = prompt("请输入用户名....");
+    // document.write(result);
+
+    // 打开/关闭窗口：open() close()
+    // var openBtn = document.getElementById("openBtn");
+    // var newWindow;
+    // openBtn.onclick = function(){
+        //打开新窗口
+    //    newWindow = open("https://www.baidu.com");
+    // }
+
+    // var closeBtn = document.getElementById("closeBtn");
+    // closeBtn.onclick = function(){
+        // 关闭新窗口
+     //   newWindow.close();
+    // }
+
+
+    // 一次性定时器
+    // var id = setTimeout("fun()", 2000);
+    // function fun(){
+    //    alert("boom~~~");
+    // }
+    // 取消setTimeout(): clearTimeout()
+    // clearTimeout(id);
+    // 循环定时器
+    // var sid = setInterval(fun, 2000);
+    // 取消定时器
+    // clearInterval(sid);
+
+    // 获取history
+    var h1 = window.history;
+    var h2 = history;
+
+    alert("h1:" + h1);
+    alert("h2:" + h2);
+
+
+
+</script>

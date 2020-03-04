@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM 获取元素对象</title>
+</head>
+<body>
+    <img id="light" src="../img/off.gif" alt="" onclick="fun();">
+    <h1 id="title">好点子.....</h1>
+
+</body>
+<script>
+    function fun(){
+        alert("我被点了一下....");
+        alert("再次被点了一下.....");
+    }
+
+    function fun2(){
+        alert("不要老点我啊......");
+    }
+
+    // 获取title 元素
+    var title = document.getElementById("title");
+    // 绑定事件
+    title.onclick = fun2;
+
+
+</script>
+</html>

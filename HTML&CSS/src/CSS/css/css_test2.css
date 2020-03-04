@@ -1,0 +1,32 @@
+#div1 {
+    color:gold;
+}
+
+div {
+    color:red;
+}
+
+.div3 {
+    color:blue;
+}
+
+* {
+    width:200px;
+    height:200px;
+    background-color:darkgrey;
+}
+
+#div1, .div3 {
+    font-size:20px;
+}
+
+#u1 .l1{
+    font-size:10px;
+    color:pink;
+    background-color:brown;
+    align:center;
+}
+
+a:hover{
+    color:red;
+}

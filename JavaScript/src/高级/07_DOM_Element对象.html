@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Element对象</title>
+</head>
+<body>
+    <a>点击惊喜</a>
+    <br>
+    <input type="button" id="set_btn" value="设置属性">
+    <input type="button" id="del_btn" value="删除属性">
+</body>
+</html>
+<script>
+    // 获取element 对象，设置属性
+    var set_btn = document.getElementById("set_btn");
+    var element_a = document.getElementsByTagName('a')[0];
+    set_btn.onclick = function(){
+        element_a.setAttribute("href", "https://www.baidu.com");
+    }
+
+    // 删除element设置的属性
+    var del_btn = document.getElementById("del_btn");
+    del_btn.onclick = function(){
+        element_a.removeAttribute("href");
+    }
+</script>

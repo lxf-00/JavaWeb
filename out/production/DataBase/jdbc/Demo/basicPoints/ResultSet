@@ -1,0 +1,11 @@
+* ResultSet   结果集对象，封装查询对象
+     * boolean next(): 游标向下移动一行，判断当前行是否是最后一行末尾(是否有数据)，如果是，则返回false，如果不是则返回true
+     * getXxx(参数):获取数据   Xxx 代表数据类型 如：getInt()  getString()
+     * 使用步骤： 游标向下移动 -》 判断是否有下一数据 -》 获取数据
+
+
+ * 练习：
+      *  定义一个方法，查询emp表的数据将其封装为对象，然后装载集合，返回。
+      * 				1. 定义Emp类
+      * 				2. 定义方法 public List<Emp> findAll(){}
+      * 				3. 实现方法 select * from emp;

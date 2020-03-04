@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>History 对象</title>
+</head>
+<body>
+    <input type="button" id="hs_count" value="获取历史记录个数">
+    <a href="03_BOM_%20Window窗口.html">网址</a>
+    <input type="button" id="forward" value="前进">
+</body>
+</html>
+<script>
+    var count = document.getElementById("hs_count");
+    count.onclick = function () {
+        // 获取当前窗口历史记录
+        var length = history.length;
+        alert(length);
+    }
+
+    var forward = document.getElementById("forward");
+    forward.onclick = function () {
+        history.forward();
+    }
+
+</script>

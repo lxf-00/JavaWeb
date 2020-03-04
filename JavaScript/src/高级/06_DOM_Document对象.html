@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document对象</title>
+</head>
+<body>
+    <div class="div1">div</div>
+    <div class="div1">div</div>
+    <div class="div1">div</div>
+    
+    <div id="div2">div2</div>
+    <input type="text" name="username">
+
+</body>
+</html>
+<script>
+    // 根据元素名获取元素对象们，返回一个数组
+    var arr1 = document.getElementsByTagName("div");
+    alert(arr1.length);
+
+    // 根据class属性值获取元素们，返回一个数组
+    var arr2 = document.getElementsByClassName("div1");
+    alert(arr2.length);
+
+    // 根据name属性值获取元素值，返回一个数组
+    var arr3 = document.getElementsByName("username");
+    alert(arr3.length);
+
+    var table = document.createElement("table");
+    alert(table);
+</script>

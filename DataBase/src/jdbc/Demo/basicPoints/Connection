@@ -1,0 +1,9 @@
+*Connection 数据库连接对象
+     * 功能1 ： 获取执行sql的对象
+     * Statement createStatement()
+     * PreparedStatement preparedStatement(String sql)
+     *
+     * 功能2： 管理事务
+     * 开启事务： setAutoCommit(boolean AutoCommit);  调用该方法并设置参数为false 即开启事务
+     * 提交事务： commit();
+     * 回滚： rollback();

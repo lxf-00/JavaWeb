@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自动跳装</title>
+</head>
+<body>
+    <span id="time">5</span> 秒后，自动跳转到下一页.....
+</body>
+</html>
+<script>
+    var counter = document.getElementById("time");
+    var num = 5;
+    function test(){
+        num--;
+        if(num <= 0){
+            location.href = "https://www.baidu.com"
+        }
+        counter.innerHTML = num;
+    }
+    setInterval(test, 1000)
+</script>

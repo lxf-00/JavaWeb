@@ -1,0 +1,7 @@
+/**
+     * Statement  执行sql的对象
+     * 功能1： 执行sql
+     * boolean execute(String sql)  可以执行任意sql
+     * int executeUpdate(String sql) 执行DML(insert , update, delete) 语句、DDL(create , alter, drop) 语句, 返回影响的行数
+     * ResultSet executeQuery(String sql) 执行DQL(select) 语句
+     */

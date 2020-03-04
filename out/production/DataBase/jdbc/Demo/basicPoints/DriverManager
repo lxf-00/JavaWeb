@@ -1,0 +1,20 @@
+* DriverManager  驱动管理对象
+     * 功能1： 注册驱动，告诉程序该使用哪种数据库   jar  (注意：mysql5之后的驱动jar包可以省略注册驱动的步骤。)
+     *
+     */
+
+   /* static{
+        try{
+            java.sql.DriverManager.registerDriver(new Driver());
+        }catch (SQLException E){
+           throw new RuntimeException("Can't register driver!");
+        }
+    }*/
+
+    /**
+     * 功能2：获取数据库连接
+     * 方法： static Conn getConnection(String url, String user, String password)
+     * URL  指定连接的路径 (jdbc:mysql://ip:port/database_name?(characterEncoding=UTF-8);
+     * user 用户名（mysql)
+     * password 密码
+     */
