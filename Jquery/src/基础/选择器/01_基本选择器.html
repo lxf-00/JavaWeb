@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基本选择器</title>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+
+    <style type="text/css">
+        div,span{
+            width: 180px;
+            height: 180px;
+            margin: 20px;
+            background: #9999CC;
+            border: #000 1px solid;
+            float:left;
+            font-size: 17px;
+            font-family:Roman;
+        }
+
+        div .mini{
+            width: 50px;
+            height: 50px;
+            background: #CC66FF;
+            border: #000 1px solid;
+            font-size: 12px;
+            font-family:Roman;
+        }
+
+        div .mini01{
+            width: 50px;
+            height: 50px;
+            background: #CC66FF;
+            border: #000 1px solid;
+            font-size: 12px;
+            font-family:Roman;
+        }
+    </style>
+
+    <script type="text/javascript">
+        // 入口函数 $(function(){})   控制样式 css  类选择器： $(".xxx") id选择器：$("#xxx") 标签选择器：$("标签名")
+        $(function () {
+            // 获取id为b1的input元素，添加绑定事件:改变id为one元素的背景颜色
+            $("#b1").click(function () {
+                $("#one").css("backgroundColor", "pink");
+            });
+
+            // 获取id为b2的元素，绑定点击事件：改变元素名为<div>的所有元素的背景颜色
+            $("#b2").click(function () {
+                $("div").css("backgroundColor", "red");
+            });
+
+            // 获取id为b3的元素，绑定点击事件：改变class为mini元素的背景颜色
+            $("#b3").click(function () {
+                $(".mini").css("backgroundColor", "red");
+            });
+
+            // 获取id为b4的元素，绑定单击事件：改变所有span 元素和id为two元素的背景颜色
+            $("#b4").click(function () {
+                $("sapn, #two").css("backgroundColor", "red");
+            })
+        })
+    </script>
+</head>
+<body>
+    <input type="button" class="mini" value="保存" name="ok" class="mini">
+    <input type="button" value="改变 id 为 one 的元素的背景色为 红色"  id="b1"/>
+    <input type="button" value=" 改变元素名为 <div> 的所有元素的背景色为 红色"  id="b2"/>
+    <input type="button" value=" 改变 class 为 mini 的所有元素的背景色为 红色"  id="b3"/>
+    <input type="button" value=" 改变所有的<span>元素和 id 为 two 的元素的背景色为红色"  id="b4"/>
+
+
+    <h1>有一种奇迹叫坚持</h1>
+    <h2>自信源于努力</h2>
+
+    <div id="one">
+        id为one
+    </div>
+
+    <div id="two" class="mini" >
+        id为two   class是 mini
+        <div  class="mini" >class是 mini</div>
+    </div>
+
+    <div class="one" >
+        class是 one
+        <div  class="mini" >class是 mini</div>
+        <div  class="mini" >class是 mini</div>
+    </div>
+    <div class="one" >
+        class是 one
+        <div  class="mini01" >class是 mini01</div>
+        <div  class="mini" >class是 mini</div>
+    </div>
+
+
+    <span class="spanone">class为spanone的span元素</span>
+    <span class="mini">class为mini的span元素</span>
+
+
+    <input type="text" value="zhang" id="username" name="username">
+
+</body>
+</html>

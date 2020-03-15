@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery 遍历</title>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            // js :获取所有的li
+            var cities = $("#city li");
+            /*for(var i = 0; i < lis.length; i++){
+                alert(cities[i].innerHTML);
+            }*/
+
+            // jq对象.each(callback)
+            cities.each(function (index, element) {
+                // 获取li对象方式一： this
+                // alert(this.innerHTML);
+                // alert($(this).html());
+
+                // 获取li对象方式二：index element
+                // alert(index + ":" + element.innerHTML);
+                //alert(index + ":" + $(element).html());
+            })
+
+            // $.each(object, [callback])
+            $.each(cities, function () {
+                // alert($(this).html())
+            });
+
+            // for.....of:query 3.0 版本之后
+            for(var li of cities){
+                alert($(li).html());
+            }
+        })
+    </script>
+</head>
+<body>
+<ul id="city">
+    <li>北京</li>
+    <li>上海</li>
+    <li>天津</li>
+    <li>重庆</li>
+</ul>
+</body>
+</html>

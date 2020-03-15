@@ -53,7 +53,7 @@ HTTP：
         2. 请求头：客户端浏览器告诉服务器一些信息
         		请求头名称: 请求头值
         		* 常见的请求头：
-        			1. User-Agent：浏览器告诉服务器，我访问你使用的浏览器版本信息
+        			1. www.userInfo.domain.User-Agent：浏览器告诉服务器，我访问你使用的浏览器版本信息
         				* 可以在服务器端获取该头的信息，解决浏览器的兼容性问题
 
         			2. Referer：http://localhost/login.html
@@ -69,7 +69,7 @@ HTTP：
         	* 字符串格式：
         		POST /login.html	HTTP/1.1
         		Host: localhost
-        		User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0
+        		www.userInfo.domain.User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0
         		Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
         		Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
         		Accept-Encoding: gzip, deflate

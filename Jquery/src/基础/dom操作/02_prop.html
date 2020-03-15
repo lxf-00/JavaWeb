@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <style type="text/css">
+        div,span{
+            width: 140px;
+            height: 140px;
+            margin: 20px;
+            background: #9999CC;
+            border: #000 1px solid;
+            float:left;
+            font-size: 17px;
+            font-family:Roman;
+        }
+
+        div.mini{
+            width: 30px;
+            height: 30px;
+            background: #CC66FF;
+            border: #000 1px solid;
+            font-size: 12px;
+            font-family:Roman;
+        }
+
+        div.visible{
+            display:none;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            // 获取北京节点的name属性
+            var name = $("#bj").attr("name");
+            //alert(name);
+
+            // 设置北京节点的name属性为dabeijing
+            $("#bj").attr("name", "dabeijing");
+
+            var name = $("#bj").attr("name");
+            //alert(name);
+
+            // 新增北京节点属性description，属性值为didu.
+            $("#bj").attr("description", "didu");
+            var description = $("#bj").attr("description");
+            // alert(description);
+
+            // 删除北京节点的name属性，并判断name属性是否存在
+            $("#bj").removeAttr("name");
+            var name = $("#bj").attr("name");
+            // alert(name);
+
+            // 获取hobby 的选取状态
+            var checked = $("#hobby").prop("checked");
+            alert(checked);
+
+        })
+    </script>
+</head>
+<body>
+
+<ul>
+    <li id="bj" name="beijing" xxx="yyy">北京</li>
+    <li id="tj" name="tianjin">天津</li>
+</ul>
+<input type="checkbox" id="hobby"/>
+
+
+</body>
+</html>
