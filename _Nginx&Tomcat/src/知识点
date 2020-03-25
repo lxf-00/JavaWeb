@@ -1,0 +1,80 @@
+1. Linux系统上安装JDK
+    1.1	卸载OpenJDK (查看命令： rpm -qa | grep java 卸载：rpm -e --nodeps xxxx);
+    1.2	创建JDK的安装路径: /usr/local/java
+    1.3 上传安装文件到linux
+    1.4 解压tar.gz：sudo tar -zxvf  /xxx/文件名 -C /usr/local/java（解压到的路径）
+    1.5 配置环境变量： sudo gedit /etc/profile 输入
+        #jdk环境变量配置信息
+        export JAVA_HOME=/usr/local/java/jdk1.8.0_212
+        export JRE_HOME=${JAVA_HOME}/jre
+        export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
+        export PATH=${JAVA_HOME}/bin:$PATH
+
+        保存退出。终端输入： source /etc/profile 使配置生效。
+    1.6 校验是否安装成功： java -version(终端命令, 显示相关版本信息，说明安装成功）
+
+2. Linux系统上安装MySQL
+
+3. Linux系统上安装tomcat：
+    3.1 文件拷贝
+    3.2 解压到/usr/local/tomcat
+    3.3 设置防火墙
+            /sbin/iptables -I INPUT -p tcp --dport 8080 -j ACCEPT
+            /etc/rc.d/init.d/iptables save
+    3.4 启动tomcat
+        进入到tomcat/bin( .startup.sh 配置JAVA环境变量和Tomcat环境变量);
+        执行 ./startup.sh
+        关闭tomcat
+        执行 ./shutdown.sh (.shutdown.sh 配置JAVA环境变量和Tomcat环境变量);
+    3.5 测试： localhots:8080
+
+4. 发布项目到Linux
+    4.1 数据备份： mysqldump -h主机名 -P端口 -u用户名 -p密码 --database 数据库名 > 文件名.sql
+                  mysqldump -h主机名 -p端口 -u用户名 -p密码 -- database 数据库名 | gzip > 文件名.sql (压缩备份）
+    4.2 数据库还原：source sql备份文件（路径）
+    4.3 将程序代码发布到linux上： maven -- lifecycle -package 命令生成war包。移动到linux上，复制到linux上tomcatwebapps下
+    4.4 修改配置文件：conf.server.xml 在Host配置段中添加类似于如下内容：<Context path="/" docBase="travel_web.war" debug="0" privileged="true" reloadable="true"/>
+    4.5 测试： localhost:8080/travel_web/
+
+5, Nginx
+    5.1 nginx 概念
+    5.2 代理和反向代理
+        5.2.1 代理：一般无特殊说明，指正向代理（forward)，正向代理是一个位于客户端A和原始服务器B之间的服务器Z，为了从原始服务器B中获取数据，用户A向代理服务器Z发起请求并制定目标服务器B，然后代理服务器Z向服务器B转交
+            请求，并将获取的数据返回给客户端。客户端必须要进行一些特别的设置才能使用正向代理。
+            作用： 访问本无法访问的服务器B； 加速访问服务器B；Cache作用；客户端访问授权；隐藏访问者的行踪
+        5.2.2 反向代理：反向代理正好与正向代理相反，对于客户端而言代理服务器就像是原始服务器，并且客户端不需要进行任何特别的设置。客户端向反向代理的命名空间(name-space)中的内容发送普通请求，接着反向代理将判断向何处(原始服务器)转交请求，并将获得的内容返回给客户端。
+            作用：保护和隐藏原始资源服务器；负载均衡（当反向代理服务器不止一个的时候，我们甚至可以把它们做成集群，当更多的用户访问资源服务器B的时候，让不同的代理服务器Z（x）去应答不同的用户，然后发送不同用户需要的资源）；
+        5.2.3 透明代理  客户端根本不需要知道有代理服务器的存在，它改编你的request fields（报文），并会传送真实IP.
+
+    5.3 实现负载均衡， Nginx+Tomcat的集群配置:
+        5.3.1 负载均衡服务器分为两种一种是通过硬件实现的负载均衡服务器，简称硬负载 f5；另一种是通过软件来实现的负载均衡，简称软负载apache nginx
+        5.3.2 修改host文件，完成域名ip映射；<IP> <HOSTNAME>.<DOMAIN> <ALIAS>（sudo /etc/init.d/networking restart 重启网络模块）
+        5.3.2 使用nginx完成负载均衡，模拟：安装多个tomcat （修改web.xml下的port)
+        5.3.3 安装nginx,配置nginx :
+            upstream xxx1 {
+                server  xxxxxx;
+                server  xxxxxxx;
+                }
+                server {
+                    listen 80;
+                    server_name xxxx;
+
+                    location / {
+                        root html;
+                        proxy_pass http://xxx1;   # 反向代理
+                        index index.jsp index.html index.htm;
+                    }
+                }
+        5.3.4 Tomcat集群的session共享：
+            一种使用tomcat广播机制完成session的共享（不推荐的方式）；
+                修改两个tomcat中的server.xml:
+                 <Cluster className="org.apache.catalina.ha.tcp.SimpleTcpCluster">
+                在项目中web.xml中添加一个配置:
+                <distributable/>
+
+            一种使用redis服务器的方式完成session的共享（推荐的方式）；
+
+
+
+
+
