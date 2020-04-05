@@ -1,0 +1,17 @@
+maven 安装配置：
+	下载安装，更改setting: 修改镜像地址，修改repository地址
+	
+idea 集成maven: 从模板中创建，可以不用从模板中创建（选择org.apaches: …archestype.weapp)
+	1， pom.xml 导入相关jar包(maven 中央仓库可查找相关jar坐标）
+	<dependency>
+		<groupId><groupId>
+		<artifactId></artifactId>
+		<version></version>
+		<scope></scope>   // 作用域
+	</dependency>
+	
+	2， maven/tomcat 运行两个插件：(使用live template）
+		tomcat7:
+		jdk1.8:
+		
+	3, 使用mysql-connector-java 测试数据库
