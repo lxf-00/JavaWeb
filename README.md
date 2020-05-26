@@ -89,4 +89,7 @@ mysql html5/css  bootstrap JavaScript Tomcat(servlet) Jquery(ajax) Json Redis
 ### 16. Maven简单使用
 - [Maven 安装配置、idea继承](https://github.com/lxf-00/JavaWeb/blob/master/_maven/maven_sixth/%E6%80%BB%E7%BB%931.txt)
 
+### 17. oracle 数据库
+- [知识点](https://github.com/lxf-00/JavaWeb/blob/master/Oracl/oracle%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.md)
+- [Oracle 与java的交互](https://github.com/lxf-00/JavaWeb/blob/master/Oracl/src/com/demo/OracleConnection.java)
 ### 》》》[综合整体项目（旅游网)](https://github.com/lxf-00/JavaWebProject-Travel_web)
